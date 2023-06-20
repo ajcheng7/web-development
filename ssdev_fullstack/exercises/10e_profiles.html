@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <style>
+            
+            p {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-family: Arial;
+            }
+             .profile-container {
+                box-shadow: 0 0 10px rgba(0,0,0,0.3) ;
+                width: 200px;
+                display: inline-block;
+                margin-right: 15px;
+                border-radius: 3px;
+            }
+
+            .profile-pic {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                margin-bottom: 8px;
+            }
+
+            .name {
+                font-size: 18px;
+                font-weight: bold;
+                margin-left: 8px;
+                color: black;
+                margin-bottom: 5px;
+            }
+
+            .mutuals {
+                margin-left: 8px;
+                margin-bottom: 8px;
+            }
+
+            .mutual-friend-pic {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                vertical-align: middle;
+            }
+
+            .mutual-friend-count {
+                display: inline-block;
+                font-size: 8px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                vertical-align: middle;
+                color: #606060; 
+            }
+
+            .add-friend {
+                border: none;
+                border-radius: 3px;
+                background-color: #1877F2;
+                color: white;
+                font-size: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-left: 8px;
+                margin-bottom: 10px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="profile-container">
+            <img class = "profile-pic" src="cat.jpg">
+            <p class="name">Oliver</p>
+            <div class="mutuals">
+                <img class="mutual-friend-pic" src="dog2.jpeg">
+                <p class="mutual-friend-count"> 2 mutual friends </p>
+            </div>
+            <button class="add-friend"> Add Friend</button>
+        </div>
+    </body>
+</html>

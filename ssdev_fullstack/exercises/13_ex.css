@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.container {
+    width: 400px;
+    height: 120px;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    padding: 12px;
+    margin: 10px;
+}
+
+.inbox {
+    font-size: 14px;
+    color: rgb(160, 160, 160);
+    padding-bottom: 20px;
+}
+.email-view {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+    border-radius: 24px;
+    margin-right: 12px;
+}
+
+.email-info {
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.time {
+    font-size: 13px;
+    color: rgb(160, 160, 160);
+}
+
+.subtitle {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.text-preview {
+    color: rgb(160, 160, 160);
+}

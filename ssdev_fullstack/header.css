@@ -1,0 +1,118 @@
+.search-bar {
+    display: block;
+}
+
+.header {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    height: 20px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.youtube {
+    height: 20px;
+}
+
+.middle-section {
+    display: flex;
+    flex: 1;
+    margin-left: 70px;
+    margin-right: 35px;
+    max-width: 500px;
+    align-items: center;
+}
+
+.search-bar {
+    flex: 1;
+    height: 36px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(200,200,200);
+    box-shadow: inset 1px 2px 3px rgba(0,0,0,0.05);
+    width: 0;
+}
+
+.search-bar::placeholder {
+    font-family: Roboto, Arial;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.search-button {
+    height: 40px;
+    width: 66px;
+    background-color: rgb(240,240,240);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(200,200,200);
+    margin-left: -1px;
+    margin-right: 10px;
+}
+
+.search-icon {
+    height: 25px;
+    margin-top: 4px;
+}
+
+.voice-search-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(240,240,240);
+}
+
+.voice-search-icon {
+    height: 25px;
+    margin-top: 4px;
+}
+
+.right-section {
+    display: flex;
+    margin-right: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    column-gap: 20px;
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.create-button, .yt-apps-button, .notifs-button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.create-icon {
+    height: 24px;
+}
+
+.yt-apps-icon {
+    height: 24px;
+}
+
+.notifs-icon {
+    height: 24px;
+}
+
+.profile-pic {
+    height: 36px;
+    width: 36px;
+    border: none;
+    border-radius: 18px;
+}

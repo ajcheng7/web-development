@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p {
+                font-family: Arial;
+                font-size: 16px;
+                color: rgba(0,0,0,0.6);
+            }
+            
+            .email-label {
+                margin-top: 0px;
+                margin-bottom: 10px;
+            }
+            .email-input {
+                margin-top: 0px;
+                width: 400px;
+                height: 28px;
+                border-radius: 3px;
+                border-color: rgba(0,0,0,0.8)
+            }
+
+            .join-button {
+                background-color: #0a66c2;
+                color: white;
+                font-size: 16px;
+                width: 400px;
+                height: 45px;
+                border: none;
+                border-radius: 25px;
+                transition: background-color 0.15s;
+                margin-bottom: 50px;            
+            }
+
+            .join-button:hover {
+                background-color: #074d93;
+                cursor: pointer;
+            }
+
+            .cat-profile {
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                vertical-align: middle;
+
+            }
+
+            .tweet-textbox {
+                border: none;
+                vertical-align: middle;
+                font-size: 12px;
+                margin-left: 5px;
+                margin-right: 45px;
+            }
+
+            .tweet-button {
+                background-color: rgb(29, 155, 240);
+                color: white;
+                font-family: Arial;
+                font-weight: bold;
+                font-size: 12px;
+                border: none;
+                height: 25px;
+                width: 60px;
+                border-radius: 15px;
+                vertical-align: middle;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="email-label">Email</p>
+        <input class="email-input">
+        <p>By clicking Agree & Join, you agree to the Privacy Policy.</p>
+        <button class="join-button">Agree & Join</button>
+        <br>
+
+        <!-- twitter text box -->
+        <div class="twitter">
+            <img class="cat-profile" src="thumbnails/cat.jpg">
+            <input class="tweet-textbox" placeholder="What's Happening?">
+            <button class="tweet-button">Tweet</button>
+        </div>
+
+        <br> 
+        
+    </body>
+</html>
