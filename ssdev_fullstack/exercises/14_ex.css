@@ -1,0 +1,63 @@
+p {
+    margin: 0px;
+    font-family: Arial;
+}
+
+.display-flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.icons {
+    background-color: #282b30;
+    position: fixed;
+    height: 300px;
+}
+
+.cat1, .cat2, .dog {
+    display: block;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+.channels {
+    background-color: #424549;
+    position: fixed;
+    left: 88px;
+    width: 170px;
+    height: 300px;
+}
+
+.header {
+    font-family: Arial;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.info {
+    color: rgb(243, 241, 241);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.add {
+    color: rgb(136, 134, 134);
+    font-size: 20px;
+}
+
+.channel-labels {
+    color: rgb(136, 134, 134);
+    font-size: 15px;
+}
+
+.label {
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
