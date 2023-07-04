@@ -6,8 +6,12 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        const abortCont = new AbortController();
+
+
         setTimeout(() => {
-            fetch(url)
+            // associate abort controller w/ the fetch
+            fetch(url, { signal: abortCont.signal })
         // fires when promise has resolved, data is returned
                 .then(res => {
                     if(!res.ok) {
@@ -24,12 +28,18 @@ const useFetch = (url) => {
                 })
                 // network error 
                 .catch(err => {
-                    setError(err.message);
-                    setIsPending(false);
+                    if (err.name === 'AbortError') {
+                        console.log('fetch aborted')
+                    } else {
+                        setError(err.message);
+                        setIsPending(false);
+                    }
+                    
                 })
         }, 1000);
         // when url changes will rerun
-        return () => console.log('cleanup');
+        // will stop the fetch when the page changes 
+        return () => abortCont.abort()
     }, [url]);
 
     return { data, isPending, error }
