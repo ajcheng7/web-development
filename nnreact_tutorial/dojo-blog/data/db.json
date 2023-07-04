@@ -13,12 +13,6 @@
       "id": 2
     },
     {
-      "title": "hello testing!! ",
-      "body": "basdlkfalkdsbbeeeeepbeoooppoapsojdfapsojd",
-      "author": "mario",
-      "id": 3
-    },
-    {
       "title": "TESTING HELLO ",
       "body": "bebop shop on a drop top little hop big flop ",
       "author": "mario",
@@ -29,6 +23,18 @@
       "body": "borat wore a hat on a fat mat dat so gr(e)at! ",
       "author": "mario",
       "id": 5
+    },
+    {
+      "title": "traveling through history",
+      "body": "the american english language is so weird in its use of double letters balloon buffoon traveling betterring etc. ",
+      "author": "yoshi",
+      "id": 6
+    },
+    {
+      "title": "hello again! ",
+      "body": "some lorem ipsum stuff etc etc",
+      "author": "mario",
+      "id": 7
     }
   ]
 }

@@ -1,10 +1,13 @@
 import { useState } from "react";
+// in ver 6 use useNavigate instead
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
     const [isPending, setIsPending] = useState(false);
+    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,6 +21,12 @@ const Create = () => {
         }).then(() => {
             console.log('new blog added');
             setIsPending(false);
+            
+            // go back one page 
+            // history.go(-1);
+
+            // brings us to the homepage
+            history.push('/');
         })
 
     }
