@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BlogList from './BlogList';
+import useFetch from "./useFetch";
 
 const Home = () => {
     // e is a default parameter describing the event object
@@ -9,37 +10,9 @@ const Home = () => {
     //     { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
     //     { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     //   ]);
-
-    const [blogs, setBlogs] = useState(null)
-    const [isPending, setIsPending] = useState(true);
-    const [error, setError] = useState(null);
-
+    const { data: blogs, isPending, error } = useFetch('http://localhost:8000/blogs');
     // be careful changing state in useEffect bc might be an infinite loop
     // no dependency array so it will only run once
-    useEffect(() => {
-        setTimeout(() => {
-            fetch('http://localhost:8000/blogs')
-        // fires when promise has resolved, data is returned
-                .then(res => {
-                    if(!res.ok) {
-                        throw Error('could not fetch data for that resource');
-                    }
-                    return res.json();
-                })
-                // data is what's inside json
-                .then(data => {
-                    console.log(data);
-                    setBlogs(data);
-                    setIsPending(false);
-                    setError(null);
-                })
-                // network error 
-                .catch(err => {
-                    setError(err.message);
-                    setIsPending(false);
-                })
-        }, 1000);
-    }, [])
 
     // create the function here instead of blogList so we can directly edit the data
     // then pass in the edited data as a prop
