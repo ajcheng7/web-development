@@ -29,6 +29,7 @@ const useFetch = (url) => {
                 })
         }, 1000);
         // when url changes will rerun
+        return () => console.log('cleanup');
     }, [url]);
 
     return { data, isPending, error }

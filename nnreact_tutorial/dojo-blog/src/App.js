@@ -1,5 +1,7 @@
- import Navbar from './Navbar'; 
+import Navbar from './Navbar'; 
 import Home from './Home';
+import Create from './Create';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
  
 function App() {
   const title = 'Welcome to the new blog';
@@ -8,13 +10,21 @@ function App() {
   const link = "http://www.youtube.com"
 
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <Navbar />
       <div className="content">
-        <Home />
-        
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/create">
+            <Create />
+          </Route>
+        </Switch>        
       </div>
     </div>
+    </Router>
   );
 }
 
