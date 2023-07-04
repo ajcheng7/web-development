@@ -1,4 +1,4 @@
-const BlogList = ({blogs, title, handleDelete}) => {
+const BlogList = ({blogs, title}) => {
     // allows us to pass in data from the home.js file
     // instead of doing it like this (below), we can destructure data in the parameter
     // const blogs = props.blogs;
@@ -13,9 +13,6 @@ const BlogList = ({blogs, title, handleDelete}) => {
                     <h2>{ blog.title }</h2>
                     <p>Written by: { blog.author }</p>
                     <p>{ blog.body }</p>
-                    <button onClick={() => handleDelete(blog.id)}>
-                        delete blog
-                    </button>
                 </div>
             ))}
         </div>
