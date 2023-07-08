@@ -1,7 +1,9 @@
 import { initializeApp } from 'firebase/app'
 import {
-  getFirestore, collection, getDocs,
-  addDoc, deleteDoc, doc
+  getFirestore, collection, onSnapshot,
+  addDoc, deleteDoc, doc,
+  query, where,
+  orderBy
 } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -22,20 +24,18 @@ const db = getFirestore()
 // collection ref
 const colRef = collection(db, 'blogs')
 
-// get collection data
-getDocs(colRef)
-  .then(snapshot => {
-    // console.log(snapshot.docs)
-    let blogs = []
-    snapshot.docs.forEach(doc => {
-      blogs.push({ ...doc.data(), id: doc.id })
-    })
-    console.log(blogs)
-  })
-  .catch(err => {
-    console.log(err.message)
-  })
+// queries
+const q = query(colRef, where("author", "==", "margaret mitchell"), orderBy('title', 'desc'));
 
+// get collection data
+
+onSnapshot(q, (snapshot)=> {
+  let blogs = []
+  snapshot.docs.forEach(doc => {
+    blogs.push({ ...doc.data(), id: doc.id })
+  })
+  console.log(blogs)
+})
 // adding docs
 const addBookForm = document.querySelector('.add')
 addBookForm.addEventListener('submit', (e) => {
