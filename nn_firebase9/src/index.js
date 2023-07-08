@@ -5,13 +5,13 @@ import {
 } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDmXgb_58lO7aK_ujN37pGlNxzWGEU0YpI",
-  authDomain: "fb9-sandbox.firebaseapp.com",
-  projectId: "fb9-sandbox",
-  storageBucket: "fb9-sandbox.appspot.com",
-  messagingSenderId: "867529587246",
-  appId: "1:867529587246:web:dc754ab7840c737f47bdbf"
-}
+  apiKey: "AIzaSyDTAMs4XTRIjO5sYVoIi3honkdNEFcLb1Y",
+  authDomain: "fir-9-dojo-44ece.firebaseapp.com",
+  projectId: "fir-9-dojo-44ece",
+  storageBucket: "fir-9-dojo-44ece.appspot.com",
+  messagingSenderId: "428813948395",
+  appId: "1:428813948395:web:afedf1089dcb48651275ae"
+};
 
 // init firebase
 initializeApp(firebaseConfig)
@@ -20,17 +20,17 @@ initializeApp(firebaseConfig)
 const db = getFirestore()
 
 // collection ref
-const colRef = collection(db, 'books')
+const colRef = collection(db, 'blogs')
 
 // get collection data
 getDocs(colRef)
   .then(snapshot => {
     // console.log(snapshot.docs)
-    let books = []
+    let blogs = []
     snapshot.docs.forEach(doc => {
-      books.push({ ...doc.data(), id: doc.id })
+      blogs.push({ ...doc.data(), id: doc.id })
     })
-    console.log(books)
+    console.log(blogs)
   })
   .catch(err => {
     console.log(err.message)
@@ -39,26 +39,29 @@ getDocs(colRef)
 // adding docs
 const addBookForm = document.querySelector('.add')
 addBookForm.addEventListener('submit', (e) => {
+  // stop the form from reloading which is the default behavior
   e.preventDefault()
 
   addDoc(colRef, {
     title: addBookForm.title.value,
     author: addBookForm.author.value,
   })
-  .then(() => {
-    addBookForm.reset()
-  })
+    .then(() => {
+      // clears out the form
+      addBookForm.reset();
+    })
 })
 
 // deleting docs
 const deleteBookForm = document.querySelector('.delete')
 deleteBookForm.addEventListener('submit', (e) => {
   e.preventDefault()
-
-  const docRef = doc(db, 'books', deleteBookForm.id.value)
+  
+  const docRef = doc(db, 'blogs', deleteBookForm.id.value);
 
   deleteDoc(docRef)
     .then(() => {
-      deleteBookForm.reset()
-    })
+      deleteBookForm.reset();
+    }) 
+
 })
