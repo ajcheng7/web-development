@@ -13,7 +13,7 @@ const onSubmit = async (values, actions) => {
 const AdvancedForm =  () => {
   return (
     <Formik
-       initialValues={{ username: '', jobType:"", acceptedTos: false}}
+       initialValues={{username: '', jobType:"", acceptedTos: false}}
        validationSchema={(advancedSchema)}
        onSubmit={(onSubmit)}
     >
